@@ -8,7 +8,7 @@ app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
 app.use(cors())
 
-const socketIO = require('socket')(http, {
+const socketIO = require('socket.io')(http, {
     cors: {
         origin: "http://localhost:3000"
     }
