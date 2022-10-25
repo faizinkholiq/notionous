@@ -8,16 +8,16 @@ import {io} from "socket.io-client";
 const socket = io.connect("http://localhost:4000");
 
 function App() {
-  return (
-    <BrowserRouter>
+	return (
+		<BrowserRouter>
 			<Routes>
 				<Route path='/' element={<Login socket={socket} />} />
 				<Route path='/dashboard' element={<Home socket={socket} />} />
 				<Route path='/post/create' element={<CreatePost socket={socket} />} />
 				<Route path='/post/:id' element={<NotionPost socket={socket} />} />
 			</Routes>
-    </BrowserRouter>
-  );
+		</BrowserRouter>
+	);
 }
 
 export default App;
