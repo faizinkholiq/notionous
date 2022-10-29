@@ -1,5 +1,21 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { WithContext as ReactTags } from "react-tag-input";
+
+
+const suggestions = ["Bellingham", "Musiala", "Gavi"].map(item => {
+    return {
+        id: item,
+        text: item,
+    }
+})
+
+const KeyCodes = {
+    comma: 188,
+    enter: 13,
+}
+
+const delimiters = [KeyCodes.comma, KeyCodes.enter]
 
 const CreatePost = () => {
     const navigate = useNavigate();
